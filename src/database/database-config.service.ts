@@ -10,12 +10,12 @@ export class DatabaseConfigeService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions | Promise<TypeOrmModuleOptions> {
     if (process.env.NODE_ENV === Environment.Production) {
       return {
-        type: 'mysql',
+        type: 'postgres',
         url: this.configService.get(EnvironmentVariables.DATABASE_URL),
       };
     } else {
       return {
-        type: 'mysql',
+        type: 'postgres',
         host: this.configService.get(EnvironmentVariables.DATABASE_HOST),
         port: this.configService.get(EnvironmentVariables.DATABASE_PORT),
         username: this.configService.get(EnvironmentVariables.DATABASE_USER),
