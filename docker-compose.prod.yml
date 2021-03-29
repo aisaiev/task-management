@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  backend_prod:
+    container_name: backend_prod
+    image: task-management-prod:1.0.0
+    build:
+      context: .
+      target: production
+      dockerfile: ./Dockerfile
+    command: npm run start:prod
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    ports:
+      - ${DATABASE_PORT}:${DATABASE_PORT}
