@@ -13,6 +13,7 @@ export class DatabaseConfigeService implements TypeOrmOptionsFactory {
         type: 'postgres',
         url: this.configService.get(EnvironmentVariables.DATABASE_URL),
         entities: [__dirname + '/../**/*.entity.{js,ts}'],
+        synchronize: true,
       };
     } else {
       return {
