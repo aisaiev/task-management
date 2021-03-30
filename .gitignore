@@ -38,6 +38,3 @@ lerna-debug.log*
 
 # VS
 .vs
-
-# Static
-/static
