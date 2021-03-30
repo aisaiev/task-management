@@ -10,6 +10,7 @@ export const enum EnvironmentVariables {
   DATABASE_PASSWORD = 'DATABASE_PASSWORD',
   DATABASE_NAME = 'DATABASE_NAME',
   DATABASE_URL = 'DATABASE_URL',
+  JWT_SECRET = 'JWT_SECRET',
 }
 
 export const envFilePath =
